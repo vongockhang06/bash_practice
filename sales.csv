@@ -1,0 +1,9 @@
+date,product,amount,region
+2026-01-01,laptop,1200,north
+2026-01-01,mouse,25,south
+2026-01-02,laptop,1200,north
+2026-01-02,keyboard,75,east
+2026-01-03,mouse,25,west
+2026-01-03,laptop,1200,south
+2026-01-04,keyboard,75,north
+2026-01-04,mouse,25,east
