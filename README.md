@@ -10,4 +10,5 @@
 - ```|``` : pipe to run many commands in sequence
 Eg: ```cat sales.csv | grep "laptop"```
 - ```wc```: word count. Default return: Lines Words Byte
+- ```2>```: Redirects error messages instead of normal output. Therefore, we also have ```2>>```
 - ```grep```: 
