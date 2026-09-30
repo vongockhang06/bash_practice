@@ -7,3 +7,7 @@
 - "${VAR,,}" lowercases whole word
 - ^ instead of , for uppercase instead of lowercase
 - In Bash associative arrays, unassigned keys evaluate to an empty string (""), not 0
+- | : pipe to run many commands in sequence
+Eg: cat sales.csv | grep "laptop"
+
+- grep: 
