@@ -64,7 +64,7 @@ Eg: ```cat nonexistentfile.txt 2> error.log```
     + Use associative array without declaring it 
     Eg: ```awk -F, 'NR>1 {count[$4]++} END {for (r in count) print r, count[r]}' sales.csv ``` ~ count per region
 
-- ```sed 'command' filename```: change, delete, or transform text.
+- ```sed 'command' filename```: change, delete, or transform text. We can also use it for character but it is more natural to use ```tr```
     + By default ```sed``` does not effect original file unless we use ```-i``` option
     + Substitution: ```sed 's/old/new/' file```. Replace the first ```old``` by ```new``` if we have many ```old``` on the same line. 
         Eg: ```sed 's/laptop/game/' sales.csv``` It does not effect the sales.csv
