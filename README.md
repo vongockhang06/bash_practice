@@ -63,4 +63,20 @@ Eg: ```cat nonexistentfile.txt 2> error.log```
     ```
     + Use associative array without declaring it 
     Eg: ```awk -F, 'NR>1 {count[$4]++} END {for (r in count) print r, count[r]}' sales.csv ``` ~ count per region
-    
+
+- ```sed 'command' filename```: change, delete, or transform text.
+    + By default ```sed``` does not effect original file unless we use ```-i``` option
+    + Substitution: ```sed 's/old/new/' file```. Replace the first ```old``` by ```new``` if we have many ```old``` on the same line. 
+        Eg: ```sed 's/laptop/game/' sales.csv``` It does not effect the sales.csv
+    + Replace all occurrences on a line: ```sed 's/old/new/g' file```
+        Eg: ```sed 's/orange/apple/g' <<< "orange orange orange"```
+    + Specify lines to substitue: ```sed '2s/old/new/' file``` for 2nd line only or ```sed '2,5s/old/new/' file``` for 2nd line to 5th line
+    + Delete lines: ```sed 'number,numberd' filename```
+        Eg: ```sed '2,5d' sales.csv``` ~ delete from line2 to line 5
+    + Delete all lines containing specific words: ```sed '/WORD/d' filename```
+    + Delete specified lines containing specific words: ```sed 'range{/WORD/d}' filename```
+        #### General rule: pattern+command or range+command no need to have braces. We just use braces when range+pattern+command 
+    + Print line: ```sed -n '2,4p' filename ``` where ```-n``` mean don't automatically print every line
+    + ```sed``` can also use regex
+        Eg: ```sed 's/[0-9]//g' sales.csv``` remove all digit
+    + Multiple command: ```sed -e command1 -e command2 filename```
