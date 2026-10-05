@@ -21,4 +21,13 @@ Eg: ```cat nonexistentfile.txt 2> error.log```
 - ```"$?"```: exit code. 0 means success other mean error
 - ```tail -n number```: take ```number``` of last lines.
 -  ```tail -n +number```: skip ```number-1``` lines at the start
-- ```grep```: 
+- ```grep -option "word" file_name```: 
+    + ```-i```: case insensitive
+    + ```-n```: line numbers + line
+    + ```-v```: lines NOT matching
+    + ```-c```: Count matches
+    + ```-A number```: matched line + ```number``` of line after the matched line
+    + ```-B number```: matched line + ```number``` of line before the matched line
+    + ```-C number```: matched line + ```number``` of line after and before the matched line
+- ```-r```: recursive search
+- ```-E```: replace ```word``` by regex pattern
