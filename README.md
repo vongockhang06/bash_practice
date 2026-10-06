@@ -96,3 +96,8 @@ Eg: ```cat nonexistentfile.txt 2> error.log```
     + Char replacement: ``` echo "hello" | tr "a-z" "A-Z" ```
     + Delete char: ``` echo "Today is 06/10/2026" | tr -d "0-9" ```
     + Squeeze char: ``` echo "aaaaaaaaaaaabbbbbbaaccc" | tr -s "a-z" ```
+
+- ```sort option file ```: sort lines in file. Sort by alphabet by default
+    + ```-r```: reverse sorting
+    + ```-n```: sort by number not by alphabet anymore
+    + Sort by field: ``` sort -t"," -k3,3nr sales.csv ``` ~ sort by ```amount``` field in reverse where ```-t``` means separator, ```-k3,3``` means sorting by key from key 3 to key 3 (so just key 3 only).
