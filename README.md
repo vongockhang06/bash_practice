@@ -31,10 +31,10 @@ Eg: ```cat nonexistentfile.txt 2> error.log```
     + ```-C number```: matched line + ```number``` of line after and before the matched line
     + ```-r```: recursive search
     + ```-E```: replace ```word``` by regex pattern
-- ```awk 'condition { action }' filename```: read structured text, select/filter data, extract columns, calculate values, and generate formatted output. awk processes text one line at a time, dividing each line into fields (like ```$1, $2, …, $NF```) using specified field separator. where ```$NF``` is the last field. Some common options and actions:
+- ```awk 'condition { action }' filename```: read structured text, select/filter data, extract columns, calculate values, and generate formatted output. awk processes text one line at a time, dividing each line into fields (like ```$1, $2, …, $NF```) using specified field separator. where ```$NF``` is the number of field. Some common options and actions:
     + ```-F```: field separator(use white space by default). 
         Eg: ```awk -F,  '{print $2}' sales.csv```
-    + ```NR```: line number. 
+    + ```NR```: number of rows. 
         Eg: ```awk -F, 'NR>1 {print $2, $3}' sales.csv``` ~ print column 2,3  and skip header in sales.csv
     + ```END```: runs after reading the entire file
         Eg: ```awk -F, '{sum+=$3} END {print "Total: " sum}' sales.csv ```
@@ -80,3 +80,14 @@ Eg: ```cat nonexistentfile.txt 2> error.log```
     + ```sed``` can also use regex
         Eg: ```sed 's/[0-9]//g' sales.csv``` remove all digit
     + Multiple command: ```sed -e command1 -e command2 filename```
+
+- ```cut```: Used to extract field - column, char, byte but mostly field.
+    + ```-d```: delimeter.
+    + ```-f```: field want to extract.
+        Eg: ```cut -d"," -f1,3 sales.csv``` ~ take field 1 and field 3.
+            ```cut -d"," -f1-3 sales.csv``` ~ take field 1 to field 3.
+    ### Note: when we want to use -c and -b we can not use -d
+    + ```-c```: extract by character.
+        Eg:```cut -c2-10 sales.csv``` ~ take char 2 to char 10.
+    + ```-b```: extract by byte.
+        Eg:```cut -b2-10 sales.csv``` ~ take byte 2 to byte 10.
