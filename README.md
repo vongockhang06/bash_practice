@@ -91,3 +91,8 @@ Eg: ```cat nonexistentfile.txt 2> error.log```
         Eg:```cut -c2-10 sales.csv``` ~ take char 2 to char 10.
     + ```-b```: extract by byte.
         Eg:```cut -b2-10 sales.csv``` ~ take byte 2 to byte 10.
+
+- ```tr [OPTION] SET1 [SET2]```: transform character
+    + Char replacement: ``` echo "hello" | tr "a-z" "A-Z" ```
+    + Delete char: ``` echo "Today is 06/10/2026" | tr -d "0-9" ```
+    + Squeeze char: ``` echo "aaaaaaaaaaaabbbbbbaaccc" | tr -s "a-z" ```
