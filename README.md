@@ -1,6 +1,6 @@
 # bash_practice
 
-## ========================= SCRIPTING ====================================
+## ============== SCRIPTING ==============
 - ```"${order: -1:1}"``` need to have space between : and -1
 - out of bound: just return empty string not raise error
 - ```declare -A array``` play a role the same as hash <unordered_map> in C++
@@ -8,7 +8,7 @@
 - ```"${VAR,,}"``` lowercases whole word
 - ```^``` instead of ```,``` for uppercase instead of lowercase
 - In Bash associative arrays, unassigned keys evaluate to an empty string (""), not 0
-## ========================= BASH COMMAND ====================================
+## ============== BASH COMMAND ==============
 - Linux handles program outputs:
     + File Descriptor 1 (```stdout```): Standard output. This is where normal, successful messages go. We can use ```&1``` to mean whatever file descriptor 1 is currently pointing to.
     + File Descriptor 2 (```stderr```): Standard error. This is where error messages and warnings go. We can use ```&2``` to mean whatever file descriptor 2 is currently pointing to.
@@ -103,14 +103,14 @@ Eg: ```cat nonexistentfile.txt 2> error.log```
     + Sort by field: ``` sort -t"," -k3,3nr sales.csv ``` ~ sort by ```amount``` field in reverse where ```-t``` means separator, ```-k3,3``` means sorting by key from key 3 to key 3 (so just key 3 only).
 
 - ``` uniq option file ```: remove adjacent duplicate lines in file. Therefor if we run ```uniq``` on the following file:
-```text
-    Alice
-    Bob
-    Alice
-    Charlie
-    Bob
-    Alice
-```
+    ```text
+        Alice
+        Bob
+        Alice
+        Charlie
+        Bob
+        Alice
+    ```
     + The file remains the same because duplicate is not adjacent. Fix: combine with ```sort```.
     + ```-c```: to count frequency of words.
     + ```-d```: shows duplicate lines (still need to sort).
