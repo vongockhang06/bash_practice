@@ -100,17 +100,13 @@ Eg: ```cat nonexistentfile.txt 2> error.log```
 - ```sort option file ```: sort lines in file. Sort by alphabet by default
     + ```-r```: reverse sorting
     + ```-n```: sort by number not by alphabet anymore
-    + Sort by field: ``` sort -t"," -k3,3nr sales.csv ``` ~ sort by ```amount``` field in reverse where ```-t``` means separator, ```-k3,3``` means sorting by key from key 3 to key 3 (so just key 3 only).
-
-- ``` uniq option file ```: remove adjacent duplicate lines in file. Therefor if we run ```uniq``` on the following file:
-    ```text
-        Alice
-        Bob
-        Alice
+    + Sort by field: ``` sort -t"," -k3,3nr sales.csv ``` ~ sort by ```amount``` field in 
         Charlie
         Bob
         Alice
     ```
+    asjgodpaigjasgojd[o
+    asfnipgdoasd]
     + The file remains the same because duplicate is not adjacent. Fix: combine with ```sort```.
     + ```-c```: to count frequency of words.
     + ```-d```: shows duplicate lines (still need to sort).
